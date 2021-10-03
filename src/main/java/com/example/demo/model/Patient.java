@@ -1,5 +1,7 @@
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.UUID;
 
 public class Patient {
@@ -8,7 +10,8 @@ public class Patient {
 
     private final String name;
 
-    public Patient(UUID id, String name) {
+    public Patient(@JsonProperty("id") UUID id,
+                   @JsonProperty("name") String name) {
         this.id = id;
         this.name = name;
     }

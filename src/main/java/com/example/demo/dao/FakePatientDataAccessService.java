@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-@Repository
+@Repository("fakeDao")
 public class FakePatientDataAccessService implements PatientDao {
 
     private static List<Patient> DB = new ArrayList<>();
