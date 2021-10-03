@@ -2,6 +2,8 @@ package com.example.demo.dao;
 
 import com.example.demo.model.Patient;
 
+import java.time.Period;
+import java.util.List;
 import java.util.UUID;
 
 public interface PatientDao {
@@ -11,4 +13,7 @@ public interface PatientDao {
         UUID id = UUID.randomUUID();
         return insertPatient(id, patient);
     }
+
+    List<Patient> selectAllPatients();
+
 }

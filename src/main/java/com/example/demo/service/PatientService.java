@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PatientService {
     private final PatientDao patientDao;
@@ -19,5 +21,8 @@ public class PatientService {
         return patientDao.insertPatient(patient);
     }
 
+    public List<Patient> getAllPatients() {
+        return patientDao.selectAllPatients();
+    }
 
 }

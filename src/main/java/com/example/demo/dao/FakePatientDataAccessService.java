@@ -17,4 +17,9 @@ public class FakePatientDataAccessService implements PatientDao {
         DB.add(new Patient(id, patient.getName()));
         return 0;
     }
+
+    @Override
+    public List<Patient> selectAllPatients() {
+        return DB;
+    }
 }
