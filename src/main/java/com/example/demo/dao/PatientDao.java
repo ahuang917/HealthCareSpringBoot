@@ -2,8 +2,6 @@ package com.example.demo.dao;
 
 import com.example.demo.model.Patient;
 
-import javax.swing.text.html.Option;
-import java.time.Period;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;

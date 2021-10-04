@@ -3,8 +3,11 @@ package com.example.demo.api;
 import com.example.demo.model.Patient;
 import com.example.demo.service.PatientService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.lang.NonNull;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 import java.util.List;
 import java.util.UUID;
 
@@ -20,7 +23,7 @@ public class PatientController {
     }
 
     @PostMapping
-    public void addPatient(@RequestBody Patient patient){
+    public void addPatient(@Valid @NonNull @RequestBody Patient patient){
         patientService.addPatient(patient);
     }
 
@@ -41,7 +44,7 @@ public class PatientController {
     }
 
     @PutMapping(path ="{id}")
-    public void updatePatientById(@PathVariable("id") UUID id, @RequestBody Patient patient) {
+    public void updatePatientById(@PathVariable("id") UUID id, @Valid @NotNull @RequestBody Patient patient) {
         patientService.updatePatient(id, patient);
     }
 }
