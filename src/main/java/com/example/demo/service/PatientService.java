@@ -15,7 +15,7 @@ public class PatientService {
     private final PatientDao patientDao;
 
     @Autowired
-    public PatientService(@Qualifier("fakeDao") PatientDao patientDao) {
+    public PatientService(@Qualifier("postgres") PatientDao patientDao) {
         this.patientDao = patientDao;
     }
 
